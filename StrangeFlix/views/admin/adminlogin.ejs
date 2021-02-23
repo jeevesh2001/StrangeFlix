@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login Form</title>
+        <link rel="stylesheet" href="/css/style.css">
+	   
+		
+	</head>
+	<body>
+		<div class="login-form">
+			<h1>Admin Login Form</h1>
+			<form action="/adminlogin" method="POST">
+				<input type="email" name="email" placeholder="E-mail" required>
+				<input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="Login">
+            </form>
+            <p>Don't Have an Account yet?</p>
+            <form action='/adminregister'>
+                <input type="button" onclick="location.href='http://localhost:5000/adminregister'" value="Sign Up">
+            </form>
+		</div>
+	</body>
+	<script src="/app.js"></script>	
+</html>
