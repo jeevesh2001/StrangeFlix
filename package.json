@@ -1,28 +1,30 @@
 {
-  "name": "strangeflix",
+  "name": "nodecourse",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jeevesh2001/StrangeFlix.git"
-  },
-  "author": "Jeevesh Mishra",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jeevesh2001/StrangeFlix/issues"
-  },
-  "homepage": "https://github.com/jeevesh2001/StrangeFlix#readme",
+  "main": "file1.js",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "bcryptjs": "^2.4.3",
+    "chalk": "^4.1.0",
+    "connect-flash": "^0.1.1",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
-    "mysql": "github:mysqljs/mysql",
-    "path": "^0.12.7"
-  }
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.17.1",
+    "express-sessions": "^1.0.6",
+    "hbs": "^4.1.1",
+    "mongoose": "^5.11.13",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.7",
+    "path": "^0.12.7",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": ""
 }
