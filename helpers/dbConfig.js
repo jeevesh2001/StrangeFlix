@@ -13,7 +13,7 @@ con.connect((err) => {
     console.log("error connecting: " + err.message);
     return;
   }
-  console.log("Connected as id " + con.threadId);
+ // console.log("Connected as id " + con.threadId);
 });
 
 module.exports = con;
