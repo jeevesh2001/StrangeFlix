@@ -5,9 +5,15 @@ const db = require("../../helpers/dbConfig");
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
+    if(file.mimetype=='video/mp4' || file.mimetype=='video/mov')
     cb(null, "./public/uploads");
+    else if(file.mimetype=='image/jpeg')
+    cb(null,"./public/img")
   },
   filename: function (req, file, cb) {
+    if(file.mimetype=='video/mp4' || file.mimetype=='video/mov')
+    cb(null, Date.now() + "-" + file.originalname);
+    else if(file.mimetype=='image/jpeg')
     cb(null, Date.now() + "-" + file.originalname);
   },
 });
@@ -29,12 +35,13 @@ router.get("/upload", (req, res) => {
   }, 1000);
 });
 
-router.post("/upload", upload.single("fileInput"), (req, res) => {
+router.post("/upload", upload.any(), (req, res) => {
+  
   let video = [
     req.body.titleInput,
     req.body.descriptionInput,
     req.body.privacyInput,
-    req.file.path,
+    req.files[0].path,
     req.body.categoryInput,
     "user_id",
   ];
@@ -46,7 +53,8 @@ router.post("/upload", upload.single("fileInput"), (req, res) => {
       throw new Error(err.message);
     }
   });
-  res.send("upload successfull");
+ // alert("upload successfull");
+  res.redirect('/');
 });
 
 module.exports = router;

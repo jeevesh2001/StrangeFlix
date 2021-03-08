@@ -4,15 +4,28 @@
 		<meta charset="utf-8">
 		<title>Home Page</title>
         <link rel="stylesheet" href="/css/style.css">
+		<script src="/app.js"></script>	
 		
 	</head>
 	<body>
 		<h1>Welcome to STRANGEFLIX</h1>
-		
-			<button onclick="location.href='http://localhost:5000/userlogin'" value="Userlogin">User Login</button>
+
+			<button onclick="location.href='http://localhost:5000/userlogin'" value="Userlogin"><%= username %></button>
 			
 			<button onclick="location.href='http://localhost:5000/adminlogin'" value="Adminlogin">Admin Login</button>
-		
-	</body>
-	<script src="/app.js"></script>	
+			<br>
+			<% var i=1 %>
+			<% files.forEach(file => { %>
+				<% var imgsrc='/img/'+file %>
+					<input type='image' onclick="func(<%= i %>)" src=<%= imgsrc %> >
+			    <% i++ %>
+				<% }) %>
+				
+	</body>	
 </html>
+<script>
+	function func (id){
+		window.location.href="http://localhost:5000/video/playing?id="+id;
+	};
+	
+</script>

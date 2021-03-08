@@ -53,3 +53,7 @@ input[type="redbutton"] {
   margin-top: 10px;
   box-align: right;
 }
+#videoPlayer{
+  width: 340px;
+  height: 300px;
+  }
