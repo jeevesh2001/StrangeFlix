@@ -32,8 +32,12 @@ router.get("/adminlogout", (req, res) => {
   req.session.destroy(function (err) {
     if (err) throw err;
   });
-  console.log("Admin logout");
-  res.redirect("/");
+  var temp=path.join(__dirname,'../../public/img');
+  var username="User Login";
+  fs.readdir(temp,(err,files)=>{
+    
+   res.render("homepage",{files,username});
+ })
 });
 
 module.exports = router;
