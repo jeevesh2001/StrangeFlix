@@ -29,7 +29,7 @@ app.use(
 app.get("/", (req, res) => {
   var temp=path.join(__dirname,'public/img');
   var login=false;
-  var name="User Login";
+  var username="User Login";
   fs.readdir(temp,(err,files)=>{
     res.render("homepage",{files,username});
   })
@@ -37,6 +37,7 @@ app.get("/", (req, res) => {
 // Routes
 
 app.use("/admin", require("./routes/admin/video"));
+app.use("/", require("./routes/admin/dashboard"));
 const userloginRouter = require("./routes/user/login");
 const userregisterRouter = require("./routes/user/register");
 const adminloginrouter = require("./routes/admin/login");

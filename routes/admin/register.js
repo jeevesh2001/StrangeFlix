@@ -27,7 +27,7 @@ router.post('/adminregister',async (req, res)=> {
     var qry = "INSERT INTO Admin (name,username,password,email,mobnumber) VALUES('" + req.body.name + "','"+req.body.username+"','" + req.body.password + "','" + req.body.email + "','" + req.body.mobnumber + "')";
     con.query(qry, function (err, result) {
       if (err) throw err;
-        res.redirect('/');
+        res.redirect('/adminlogin');
       })}
     });
   })

@@ -21,7 +21,7 @@ router.post("/adminlogin", async (req, res) => {
     if (result.length > 0 && bcrypt.compareSync(Pass, result[0]["password"])) {
       req.session.loggedin = true;
       req.session.username = result[0]["username"];
-      res.redirect("/");
+      res.redirect("/admin/dashboard");
     } else {
       res.send(req.flash("message"));
     }
