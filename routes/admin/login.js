@@ -5,7 +5,7 @@ const flash = require("connect-flash");
 const path = require("path");
 const con = require("../../helpers/dbConfig.js");
 const app = express();
-
+const fs=require('fs');
 const router = express.Router();
 app.use(flash());
 router.get("/adminlogin", (req, res) => {

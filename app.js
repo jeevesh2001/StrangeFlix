@@ -48,7 +48,6 @@ app.use("/", userregisterRouter);
 app.use("/", adminloginrouter);
 app.use("/", adminregisterrouter);
 app.use("/", require("./routes/videostreaming"));
-
 let allfiles=[];
 const PORT = parseInt(process.env.PORT) || 5000;
 const filepath=path.join(__dirname,'/public/img')
